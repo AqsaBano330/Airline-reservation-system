@@ -1,6 +1,8 @@
 import 'home.dart';
 import 'dart:io';
 
+import 'mainpage.dart';
+
 login() {
   bool isloggedin = false;
   while (isloggedin == false) {
@@ -32,4 +34,5 @@ login() {
         orElse: () => Map<String, String>());
     print(currentUser);
   }
+  mainpage();
 }
