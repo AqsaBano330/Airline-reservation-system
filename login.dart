@@ -1,29 +1,35 @@
+import 'home.dart';
 import 'dart:io';
 
-void main() {
-  List<dynamic> users = [
-    {'email': 'aqsabano08@gmail.com', 'password': '12345'},
-    {'email': 'aqsakhan@gmail.com', 'password': '12346'},
-    {'email': 'aqsapagal@gmmail.com', 'password': '12347'}
-  ];
-
-  bool isLoggedIn = false;
-
-  while (isLoggedIn == false) {
+login() {
+  bool isloggedin = false;
+  while (isloggedin == false) {
     print("Enter email");
     String email = stdin.readLineSync()!;
     print("Enter Password");
     String password = stdin.readLineSync()!;
     for (var i = 0; i <= users.length - 1; i++) {
       if (users[i]["email"] == email && users[i]["password"] == password) {
-        isLoggedIn = true;
+        isloggedin = true;
         break;
       }
     }
-    if (isLoggedIn == true) {
+    if (isloggedin == true) {
       print("logged in");
     } else {
-      print("invalid");
+      for (var i = 0; i <= users.length - 1; i++) {
+        if (users[i]["email"] != email && users[i]["password"] != password) {
+          print("Eamil and password both invalid");
+        } else if (users[i]["email"] != email) {
+          print("email is incorrect");
+        } else {
+          print("password is incorrect");
+        }
+      }
     }
+    currentUser = users.firstWhere(
+        (user) => user['email'] == email && user['password'] == password,
+        orElse: () => Map<String, String>());
+    print(currentUser);
   }
 }
