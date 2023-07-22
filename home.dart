@@ -1,80 +1,104 @@
 import 'dart:io';
 
+import 'frontpage.dart';
+
+List users = [];
+Map currentUser = {};
+bool continueprogram = true;
 void main() {
-  bool isloggedin = true;
-  List user = [];
-  Map currentUser = {};
-  print("Welcome to AK Airlines");
-  print("Reach New Heights with Seamless Flight Bookings!");
-
-  while (isloggedin) {
-    print("Do you want to register? Press 'R'");
-    print("Already have account?Press 'S' for sign in");
-
+  message();
+  while (continueprogram) {
+    options();
+    //input for signin signup and exit
     var choice = (stdin.readLineSync()!);
+
+    //for signup
     if (choice == "R" || choice == "r") {
+      print("========Registeration========");
       stdout.write("First Name: ");
-      var choice = (stdin.readLineSync()!);
-      //print("object");
+      var Fname = (stdin.readLineSync()!);
+
       stdout.write("Last Name: ");
-      var choice1 = (stdin.readLineSync()!);
-    } else if (choice == "S" || choice == "s") {
-      List<dynamic> users = [
-        {'email': 'aqsabano08@gmail.com', 'password': '12345'},
-        {'email': 'aqsakhan@gmail.com', 'password': '12346'},
-        {'email': 'aqsapagal@gmmail.com', 'password': '12347'}
-      ];
+      var Lname = (stdin.readLineSync()!);
 
-      bool isLoggedIn = false;
+      stdout.write("phone no ");
+      var phone_no = int.parse(stdin.readLineSync()!);
 
-      while (isLoggedIn == false) {
+      stdout.write("nic no ");
+      var NIC_no = int.parse(stdin.readLineSync()!);
+
+      stdout.write("passport number ");
+      var passport_number = int.parse(stdin.readLineSync()!);
+
+      stdout.write("email");
+      var email = (stdin.readLineSync()!);
+
+      if (users.any((e) => e["email"] == email)) {
+        print('email already exists. Please choose another username.');
+        print("again enter your email");
+        var email = (stdin.readLineSync()!);
+      }
+
+      stdout.write("password ");
+      var password = (stdin.readLineSync()!);
+
+      stdout.write("confirm password ");
+      var confirm_password = (stdin.readLineSync()!);
+
+      Map user = {
+        "firstName": Fname,
+        "lastName": Lname,
+        "phoneNo": phone_no,
+        "nicNo": NIC_no,
+        "passportNumber": passport_number,
+        "email": email,
+        "password": password,
+        "confirmPassword": confirm_password
+      };
+
+      users.add(user);
+    }
+    //then home page
+
+    //for signin
+
+    else if (choice == "S" || choice == "s") {
+      print("========Signin========");
+
+      bool isloggedin = false;
+      while (isloggedin == false) {
         print("Enter email");
         String email = stdin.readLineSync()!;
         print("Enter Password");
         String password = stdin.readLineSync()!;
         for (var i = 0; i <= users.length - 1; i++) {
           if (users[i]["email"] == email && users[i]["password"] == password) {
-            isLoggedIn = true;
+            isloggedin = true;
             break;
           }
         }
-        if (isLoggedIn == true) {
+        if (isloggedin == true) {
           print("logged in");
         } else {
-          print("invalid");
+          for (var i = 0; i <= users.length - 1; i++) {
+            if (users[i]["email"] != email &&
+                users[i]["password"] != password) {
+              print("Eamil and password both invalid");
+            } else if (users[i]["email"] != email) {
+              print("email is incorrect");
+            } else {
+              print("password is incorrect");
+            }
+          }
         }
+        currentUser = users.firstWhere(
+            (user) => user['email'] == email && user['password'] == password,
+            orElse: () => Map<String, String>());
+        print(currentUser);
       }
-    } else {
-      print("you didnt slect anything");
+    } //sign in
+    else if (choice == "E" || choice == "e") {
+      exit(0);
     }
   }
-
-//sigin
-
-  //   List<dynamic> users = [
-  //     {'email': 'aqsabano08@gmail.com', 'password': '12345'},
-  //     {'email': 'aqsakhan@gmail.com', 'password': '12346'},
-  //     {'email': 'aqsapagal@gmmail.com', 'password': '12347'}
-  //   ];
-
-  //   bool isLoggedIn = false;
-
-  //   while (isLoggedIn == false) {
-  //     print("Enter email");
-  //     String email = stdin.readLineSync()!;
-  //     print("Enter Password");
-  //     String password = stdin.readLineSync()!;
-  //     for (var i = 0; i <= users.length - 1; i++) {
-  //       if (users[i]["email"] == email && users[i]["password"] == password) {
-  //         isLoggedIn = true;
-  //         break;
-  //       }
-  //     }
-  //     if (isLoggedIn == true) {
-  //       print("logged in");
-  //     } else {
-  //       print("invalid");
-  //     }
-  //   }
-  // }
 }
