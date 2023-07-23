@@ -32,7 +32,6 @@ login() {
     currentUser = users.firstWhere(
         (user) => user['email'] == email && user['password'] == password,
         orElse: () => Map<String, String>());
-    print(currentUser);
   }
   mainpage();
 }

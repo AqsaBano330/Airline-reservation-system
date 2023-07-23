@@ -1,7 +1,6 @@
 message() {
-  print("Wlecome to Ak airlines");
-  print("press r for register");
-  print("s for signin");
-
-  print("e for exit");
+  print("============================================");
+  print("=========Wlecome to Ak airlines=============");
+  print("============================================");
+  print("choole Aasmaaaan...........");
 }

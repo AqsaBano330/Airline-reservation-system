@@ -18,19 +18,30 @@ registration() {
   var passport_number = int.parse(stdin.readLineSync()!);
 
   stdout.write("email ");
+//var email;
+  //bool isemailsame=true;
+//  while(isemailsame){
   var email = (stdin.readLineSync()!);
-
   if (users.any((e) => e["email"] == email)) {
-    print('email already exists. Please choose another username.');
+    print('email already exists. Please choose another email.');
     print("registeration failed");
     registration();
   }
+//  }
 
   stdout.write("password ");
   var password = (stdin.readLineSync()!);
 
   stdout.write("confirm password ");
   var confirm_password = (stdin.readLineSync()!);
+
+  if (password == confirm_password) {
+    print("password confirmed");
+  } else {
+    print("password is not same");
+    print("Registeration failed");
+    registration();
+  }
 
   Map user = {
     "firstName": Fname,
@@ -44,6 +55,6 @@ registration() {
   };
 
   users.add(user);
-  print(users);
-  print(user);
+  print("Your Account is registered");
+  print("==============================");
 }

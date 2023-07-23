@@ -2,6 +2,7 @@ import 'home.dart';
 import 'dart:io';
 
 accountDetails() {
+  print("=============Account Deatils==========");
   stdout.write("First Name:");
   print(currentUser["firstName"]);
   stdout.write("Last Name:");
