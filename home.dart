@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'frontpageoptions.dart';
 import 'login.dart';
 import 'message.dart';
@@ -15,14 +14,17 @@ void main() {
     frontoptions(); //choose
 
     //input for signin signup and exit
+    stdout.write("Enter your choice please: ");
     var choice = (stdin.readLineSync()!);
 
     //for signup
     if (choice == "R" || choice == "r") {
-      print("========Registeration========");
+      print(
+          "==========================   Registeration   =========================");
       registration();
     } else if (choice == "S" || choice == "s") {
-      print("========Signin========");
+      print(
+          "============================   Sign in   =============================");
       login();
     } //sign in
     else if (choice == "E" || choice == "e") {

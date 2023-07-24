@@ -55,6 +55,9 @@ registration() {
   };
 
   users.add(user);
-  print("Your Account is registered");
+  print(" ______________________________");
+  print("|  Your Account is registered  | ");
+
   print("==============================");
+  print("");
 }

@@ -6,15 +6,17 @@ import 'home.dart';
 import 'regsiteration.dart';
 
 mainpage() {
-  print("===============================");
+  print("");
   print("Hi ${currentUser["firstName"]},");
-  print("Hope you will enjoy your journey");
+  print("Unlock Your Dreams, Soar to New Heights - Book Your Flight Today!");
+  print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
   print("Account details(D)");
   print("Book Flight(B)");
   print("Your Booking(Y)");
   print("Flight Schedule(F)");
   print("logout(L)");
-
+  print("");
+  stdout.write("Please enter your choice: ");
   var bolo = stdin.readLineSync();
   if (bolo == "D" || bolo == "d") {
     accountDetails();
@@ -23,6 +25,6 @@ mainpage() {
   } else if (bolo == "Y" || bolo == "y") {
   } else if (bolo == "F" || bolo == "f") {
   } else if (bolo == "L" || bolo == "l") {
-    main();
+    // main();
   }
 }
