@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'accountdetails.dart';
+import 'bookingdetails.dart';
 import 'flightbooking.dart';
+import 'flightschedule.dart';
 import 'home.dart';
 import 'regsiteration.dart';
 
@@ -23,8 +25,10 @@ mainpage() {
   } else if (bolo == "B" || bolo == "b") {
     flightbooking();
   } else if (bolo == "Y" || bolo == "y") {
+    bookingdetails();
   } else if (bolo == "F" || bolo == "f") {
+    flightschedule();
   } else if (bolo == "L" || bolo == "l") {
-    // main();
+    main();
   }
 }
