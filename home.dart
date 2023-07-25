@@ -18,8 +18,9 @@ void home() {
 
   //for signup
   if (choice == "R" || choice == "r") {
+    print("object");
     print(
-        "==========================   Registeration   =========================");
+        "==========================   REGISTRATION   =========================");
     registration();
   } else if (choice == "S" || choice == "s") {
     print(
