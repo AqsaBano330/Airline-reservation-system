@@ -7,28 +7,26 @@ import 'regsiteration.dart';
 List users = [];
 Map currentUser = {};
 bool continueprogram = true;
-void main() {
+void home() {
   message(); //welcome...
 
-  while (continueprogram) {
-    frontoptions(); //choose
+  frontoptions(); //choose
 
-    //input for signin signup and exit
-    stdout.write("Enter your choice please: ");
-    var choice = (stdin.readLineSync()!);
+  //input for signin signup and exit
+  stdout.write("Enter your choice please: ");
+  var choice = (stdin.readLineSync()!);
 
-    //for signup
-    if (choice == "R" || choice == "r") {
-      print(
-          "==========================   Registeration   =========================");
-      registration();
-    } else if (choice == "S" || choice == "s") {
-      print(
-          "============================   Sign in   =============================");
-      login();
-    } //sign in
-    else if (choice == "E" || choice == "e") {
-      exit(0);
-    }
+  //for signup
+  if (choice == "R" || choice == "r") {
+    print(
+        "==========================   Registeration   =========================");
+    registration();
+  } else if (choice == "S" || choice == "s") {
+    print(
+        "============================   Sign in   =============================");
+    login();
+  } //sign in
+  else if (choice == "E" || choice == "e") {
+    exit(0);
   }
 }

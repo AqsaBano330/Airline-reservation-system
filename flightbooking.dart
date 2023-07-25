@@ -2,35 +2,15 @@ import 'dart:io';
 import 'dart:math';
 
 import 'home.dart';
+import 'payment.dart';
+import 'bookingdetails.dart';
+import 'mainpage.dart';
 
-flightbooking() {
+flightbooking(List flights) {
   var random = Random();
   print("");
 
-  List flights = [
-    {
-      "source": "Karachi",
-      "destination": "Pakistan",
-      "ddate": 1,
-      "rdate": 1,
-      "price": "123000",
-      "seat": "middle row",
-      "cabinclass": "Economy",
-      "flightnumber": 065433
-    },
-    {
-      "source": "Karachi",
-      "destination": "Pakistan",
-      "ddate": 1,
-      "rdate": 1,
-      "price": 1,
-      "seat": "a",
-      "cabinclass": "a",
-      "flightnumber": 676676
-    }
-  ];
-
-  print("==================Book your flight=================");
+  print("================== Book your flight =================");
 
   stdout.write("Source: ");
   var source = stdin.readLineSync();
@@ -53,6 +33,7 @@ flightbooking() {
     "seat": seat,
     "cabinclass": cabinclass
   };
+
   bool isflight = false;
 
   for (var b = 0; b <= flights.length - 1; b++) {
@@ -70,6 +51,11 @@ flightbooking() {
       int Booking_id = random.nextInt(100) + 1;
       currentUser["Bookingid"] = Booking_id;
 
+      print("Press P for payment");
+      var paymentoutput = stdin.readLineSync();
+      if (paymentoutput == "p" || paymentoutput == "P") {
+        payment();
+      }
       break;
     }
   }
@@ -90,15 +76,9 @@ flightbooking() {
     var jao = stdin.readLineSync();
 
     if (jao == "b" || jao == "B") {
-      flightbooking();
+      flightbooking(flights);
     }
   }
-
-  // for (var e = 0; e < users.length - 1; e++) {
-  //   if (users[e]["email"] == currentUser["email"]) {
-  //     users[e].add(currentUser);
-  //   }
-  // }
 
   print(currentUser);
   print(users);

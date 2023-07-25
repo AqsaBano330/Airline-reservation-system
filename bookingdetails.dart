@@ -3,11 +3,14 @@ import 'dart:io';
 import 'home.dart';
 
 bookingdetails() {
-  print("====================Your Booking Details========================");
+  print("====================  Your Booking Details  ========================");
 
+  print("please enter booking id");
   var bookingid123 = int.parse(stdin.readLineSync()!);
+  print(bookingid123);
+  print(currentUser["Bookingid"]);
 
-  if (bookingid123 = currentUser["Bookingid"]) {
+  if (bookingid123 == currentUser["Bookingid"]) {
     stdout.write("| Booking ID: ");
     print("{$currentUser['Bookingid']}  |");
     stdout.write("| Source: ");
