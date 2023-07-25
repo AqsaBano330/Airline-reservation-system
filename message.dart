@@ -1,4 +1,5 @@
 message() {
+  print("");
   print(
       "*    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    ");
   print(
