@@ -40,17 +40,28 @@ mainpage() {
   print("Flight Schedule(F)");
   print("logout(L)");
   print("");
+
   stdout.write("Please enter your choice: ");
-  var bolo = stdin.readLineSync();
-  if (bolo == "D" || bolo == "d") {
-    accountDetails();
-  } else if (bolo == "B" || bolo == "b") {
-    flightbooking(flights);
-  } else if (bolo == "Y" || bolo == "y") {
-    bookingdetails();
-  } else if (bolo == "F" || bolo == "f") {
-    flightschedule(flights);
-  } else if (bolo == "L" || bolo == "l") {
-    home();
+
+  bool isbolo = false;
+  while (isbolo == false) {
+    var bolo = stdin.readLineSync();
+    if (bolo == "D" || bolo == "d") {
+      accountDetails();
+    } else if (bolo == "B" || bolo == "b") {
+      flightbooking(flights);
+      isbolo = true;
+    } else if (bolo == "Y" || bolo == "y") {
+      bookingdetails();
+      isbolo = true;
+    } else if (bolo == "F" || bolo == "f") {
+      flightschedule(flights);
+      isbolo = true;
+    } else if (bolo == "L" || bolo == "l") {
+      home();
+      isbolo = true;
+    } else if (bolo == "") {
+      print("it can not be empty");
+    }
   }
 }

@@ -1,3 +1,4 @@
+import 'admin.dart';
 import 'home.dart';
 import 'dart:io';
 
@@ -5,35 +6,43 @@ import 'mainpage.dart';
 
 login() {
   bool isloggedin = false;
-  while (isloggedin == false) {
+
+  while (!isloggedin) {
     print("Enter email");
     String email = stdin.readLineSync()!;
     print("Enter Password");
     String password = stdin.readLineSync()!;
-    for (var i = 0; i <= users.length - 1; i++) {
+
+    bool isEmailValid = false;
+    bool isPasswordValid = false;
+
+    for (var i = 0; i < users.length; i++) {
       if (users[i]["email"] == email && users[i]["password"] == password) {
         isloggedin = true;
-        break;
+        currentUser = users[i]; // Set the current user here
+        break; // Exit the loop once a match is found
+      } else if (users[i]["email"] == email) {
+        isEmailValid = true;
+      } else if (users[i]["password"] == password) {
+        isPasswordValid = true;
       }
     }
-    if (isloggedin == true) {
+
+    if (isloggedin) {
       print("");
-      print("You are Successfully loggedin");
-      print("==============================================================");
+      print("============================================================");
+      print("!!!!!!!!!!!!!Your account is successfully logged in!!!!!!!!!!");
+      print("============================================================");
     } else {
-      for (var i = 0; i <= users.length - 1; i++) {
-        if (users[i]["email"] != email && users[i]["password"] != password) {
-          print("Eamil and password both invalid");
-        } else if (users[i]["email"] != email) {
-          print("email is incorrect");
-        } else {
-          print("password is incorrect");
-        }
+      if (isEmailValid && isPasswordValid) {
+        print("Oops...password is incorrect");
+      } else if (isEmailValid) {
+        print("Oops...email is incorrect");
+      } else {
+        print("Email and password both are invalid");
       }
     }
-    currentUser = users.firstWhere(
-        (user) => user['email'] == email && user['password'] == password,
-        orElse: () => Map<String, String>());
   }
+
   mainpage();
 }

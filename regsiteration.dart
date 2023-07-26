@@ -2,6 +2,7 @@ import 'home.dart';
 import 'dart:io';
 
 registration() {
+  Map user = {};
   stdout.write("First Name: ");
   var Fname = stdin.readLineSync()!;
 
@@ -29,29 +30,29 @@ registration() {
   stdout.write("password ");
   var password = (stdin.readLineSync()!);
 
-  stdout.write("confirm password ");
-  var confirm_password = (stdin.readLineSync()!);
-
-  if (password == confirm_password) {
-    print("password confirmed");
-  } else {
-    print("password is not same");
-    print("Registeration failed");
-    registration();
+  bool isconfirm = true;
+  while (isconfirm == true) {
+    stdout.write("confirm password ");
+    var confirm_password = (stdin.readLineSync()!);
+    if (confirm_password == password) {
+      print("password confirmed");
+      user["password"] = password;
+      isconfirm = false;
+    } else {
+      print("password is not same");
+    }
   }
 
-  Map user = {
-    "firstName": Fname,
-    "lastName": Lname,
-    "phoneNo": phone_no,
-    "nicNo": NIC_no,
-    "passportNumber": passport_number,
-    "email": email,
-    "password": password,
-    "confirmPassword": confirm_password
-  };
+  user["firstName"] = Fname;
+  user["lastName"] = Lname;
+  user["phoneNo"] = phone_no;
+  user["nicNo"] = NIC_no;
+  user["passportNumber"] = passport_number;
+  user["email"] = email;
+  user["password"] = password;
 
   users.add(user);
+
   print("            ______________________________");
   print("           |  Your Account is registered  |");
   print("            ______________________________");
