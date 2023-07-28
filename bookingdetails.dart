@@ -8,7 +8,7 @@ bookingdetails() {
 
   bool isbookingid = false;
 
-  while (isbookingid = false) {
+  while (isbookingid == false) {
     print("please enter booking id");
     var bookingid123 = int.parse(stdin.readLineSync()!);
     print(bookingid123);
@@ -16,11 +16,11 @@ bookingdetails() {
 
     if (bookingid123 == currentUser["Bookingid"]) {
       stdout.write("| Booking ID: ");
-      print("{$currentUser['Bookingid']}  |");
+      print(currentUser['Bookingid']);
       stdout.write("| Source: ");
-      print("{$currentUser['source']}   |");
+      print(currentUser['source']);
       stdout.write("| Destination: ");
-      print("{$currentUser['destination']}");
+      print(currentUser['destination']);
       stdout.write("| Departure Date: ");
       print(currentUser["ddate"]);
       stdout.write("| Return Date: ");
@@ -31,11 +31,23 @@ bookingdetails() {
       print(currentUser["seat"]);
       stdout.write("| Cabin Class: ");
       print(currentUser["cabinclass"]);
-      print("                                            <-Back(B)");
-    }
-    if (bookingid123 == "B" || bookingid123 == "b") {
+      print("                                            <-Back(8)");
+    } else if (bookingid123 == 8) {
       isbookingid = true;
       mainpage();
+    } else if (bookingid123 == 0) {
+      users.remove(currentUser['Bookingid']);
+      users.remove(currentUser["source"]);
+      users.remove(currentUser["destination"]);
+      users.remove(currentUser["ddate"]);
+      users.remove(currentUser["rdate"]);
+      users.remove(currentUser["price"]);
+      users.remove(currentUser["seat"]);
+      users.remove(currentUser["cabinclass"]);
+
+      print("Flight deletd");
+    } else {
+      print("There is no Booking");
     }
   }
 }
