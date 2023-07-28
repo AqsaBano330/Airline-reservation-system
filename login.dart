@@ -1,3 +1,41 @@
+// import 'admin.dart';
+// import 'home.dart';
+// import 'dart:io';
+
+// import 'mainpage.dart';
+
+// login() {
+//   bool isloggedin = false;
+
+//   while (isloggedin == false) {
+//     print("Enter email");
+//     String email = stdin.readLineSync()!;
+//     print("Enter Password");
+//     var password = stdin.readLineSync()!;
+
+//     for (var i = 0; i <= users.length - 1; i++) {
+//       if (users[i]["email"] == email && users[i]["password"] == password) {
+//         isloggedin = true;
+//         currentUser = users[i];
+//         break;
+//       } else if (email == "admin@gmail.com" && password == "123") {
+//         admin();
+//       } else if (users[i]["email"] != email ||
+//           users[i]["password"] != password) {
+//         print("User name or password is invalid");
+//       }
+//     }
+
+//     if (isloggedin == true) {
+//       print("");
+//       print("=============================================================");
+//       print("!!!!!!!!!!!!!Your account is successfully logged in!!!!!!!!!!");
+//       print("=============================================================");
+//       mainpage();
+//     }
+//   }
+// }
+
 import 'admin.dart';
 import 'home.dart';
 import 'dart:io';
@@ -7,42 +45,35 @@ import 'mainpage.dart';
 login() {
   bool isloggedin = false;
 
-  while (!isloggedin) {
+  while (isloggedin == false) {
     print("Enter email");
     String email = stdin.readLineSync()!;
     print("Enter Password");
-    String password = stdin.readLineSync()!;
+    var password = stdin.readLineSync()!;
 
-    bool isEmailValid = false;
-    bool isPasswordValid = false;
+    if (email == "admin@gmail.com" && password == "123") {
+      admin();
+      break; // Exit the loop if admin login is successful
+    }
 
     for (var i = 0; i < users.length; i++) {
       if (users[i]["email"] == email && users[i]["password"] == password) {
         isloggedin = true;
-        currentUser = users[i]; // Set the current user here
-        break; // Exit the loop once a match is found
-      } else if (users[i]["email"] == email) {
-        isEmailValid = true;
-      } else if (users[i]["password"] == password) {
-        isPasswordValid = true;
+        currentUser = users[i];
+        break;
       }
     }
 
-    if (isloggedin) {
-      print("");
-      print("============================================================");
-      print("!!!!!!!!!!!!!Your account is successfully logged in!!!!!!!!!!");
-      print("============================================================");
-    } else {
-      if (isEmailValid && isPasswordValid) {
-        print("Oops...password is incorrect");
-      } else if (isEmailValid) {
-        print("Oops...email is incorrect");
-      } else {
-        print("Email and password both are invalid");
-      }
+    if (!isloggedin) {
+      print("User name or password is invalid");
     }
   }
 
-  mainpage();
+  if (isloggedin) {
+    print("");
+    print("=============================================================");
+    print("!!!!!!!!!!!!!Your account is successfully logged in!!!!!!!!!!");
+    print("=============================================================");
+    mainpage();
+  }
 }
