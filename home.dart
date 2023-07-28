@@ -4,11 +4,11 @@ import 'login.dart';
 import 'message.dart';
 import 'regsiteration.dart';
 
-List users = [];
-Map currentUser = {};
+List users = []; // user ki sari detail hgi in the form of map
+Map currentUser = {}; // jisne abhi sigin kia uski detail store hgi
 bool continueprogram = true;
 void home() {
-  message(); //welcome...
+  message(); //welcome bla bla
 
   frontoptions(); //choose
   bool iscontinue = true;
