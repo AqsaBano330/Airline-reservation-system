@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'adminvViewAllUserDetails.dart';
+import 'allflights.dart';
 import 'mainpage.dart';
 
 admin() {
@@ -15,7 +16,7 @@ admin() {
   if (adminchoice == "1") {
     adminViewAllUserDetails();
   } else if (adminchoice == "2") {
-    mainpage();
+    allflights();
   } else if (adminchoice == "3") {
     mainpage();
   } else if (adminchoice == "4") {
