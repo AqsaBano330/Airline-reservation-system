@@ -46,10 +46,12 @@ login() {
   bool isloggedin = false;
 
   while (isloggedin == false) {
-    print("Enter email");
+    stdout.write("| Enter email: ");
     String email = stdin.readLineSync()!;
-    print("Enter Password");
+    stdout.write("| Enter Password: ");
     var password = stdin.readLineSync()!;
+    print(
+        "|_________________________________________________________________|");
 
     if (email == "admin@gmail.com" && password == "123") {
       admin();
@@ -60,20 +62,16 @@ login() {
       if (users[i]["email"] == email && users[i]["password"] == password) {
         isloggedin = true;
         currentUser = users[i];
+        mainpage();
+        print("            ____________________________________");
+        print("           |  Your are Successfullu Loggedin    |");
+        print("           |____________________________________|");
         break;
       }
     }
 
     if (!isloggedin) {
-      print("User name or password is invalid");
+      print("| !!!Oops...User name or password is invalid!!!");
     }
-  }
-
-  if (isloggedin) {
-    print("");
-    print("=============================================================");
-    print("!!!!!!!!!!!!!Your account is successfully logged in!!!!!!!!!!");
-    print("=============================================================");
-    mainpage();
   }
 }

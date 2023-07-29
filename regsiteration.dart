@@ -3,43 +3,45 @@ import 'dart:io';
 
 registration() {
   Map user = {};
-  stdout.write("First Name: ");
+  stdout.write("| First Name:");
   var Fname = stdin.readLineSync()!;
 
-  stdout.write("Last Name: ");
+  stdout.write("| Last Name: ");
   var Lname = stdin.readLineSync()!;
 
-  stdout.write("phone no ");
+  stdout.write("| phone no ");
   var phone_no = int.parse(stdin.readLineSync()!); //"phoneNo": phone_no,
 
-  stdout.write("nic no ");
+  stdout.write("| nic no ");
   var NIC_no = int.parse(stdin.readLineSync()!);
 
-  stdout.write("passport number ");
+  stdout.write("| passport number ");
   var passport_number = int.parse(stdin.readLineSync()!);
 
-  stdout.write("email ");
+  stdout.write("| email ");
 
   var email = (stdin.readLineSync()!);
   if (users.any((e) => e["email"] == email)) {
     print('email already exists. Please choose another email.');
-    print("registeration failed");
+    print("registeration failed!!!");
     registration();
   }
 
-  stdout.write("password ");
+  stdout.write("| password ");
   var password = (stdin.readLineSync()!);
 
   bool isconfirm = true;
   while (isconfirm == true) {
-    stdout.write("confirm password ");
+    stdout.write("| confirm password ");
     var confirm_password = (stdin.readLineSync()!);
     if (confirm_password == password) {
-      print("password confirmed");
+      print("| !!!password confirmed!!!");
+      print(
+          "|________________________________________________________________");
       user["password"] = password;
       isconfirm = false;
     } else {
-      print("password is not same");
+      print("!!!password is not same!!!");
     }
   }
 
@@ -53,11 +55,10 @@ registration() {
 
   users.add(user);
 
-  print("            ______________________________");
-  print("           |  Your Account is registered  |");
-  print("            ______________________________");
+  print("            ____________________________________");
+  print("           |  Your Account has been registered  |");
+  print("           |____________________________________|");
 
-  print("========================================================");
   print("");
 
   home();

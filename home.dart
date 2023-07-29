@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'frontpageoptions.dart';
 import 'login.dart';
 import 'message.dart';
 import 'regsiteration.dart';
@@ -10,7 +9,19 @@ bool continueprogram = true;
 void home() {
   message(); //welcome bla bla
 
-  frontoptions(); //choose
+  print(" __________________________________________________________________");
+  print("|                                                                  |");
+  print("|                             AK AIRLINES                          |");
+  print("|__________________________________________________________________|");
+  print("|                                                                  |");
+  print("|                                                                  |");
+  print("|  [R] Registration                                                |");
+  print("|  [S] SignUp                                                      |");
+  print("|  [E] Exit                                                        |");
+  print("|                                                                  |");
+  print("| Please Enter your choice:                                        |");
+  print("|__________________________________________________________________|");
+
   bool iscontinue = true;
   while (iscontinue) {
     //input for signin signup and exit
@@ -19,13 +30,24 @@ void home() {
 
     //for signup
     if (choice == "R" || choice == "r") {
-      print("");
       print(
-          "==========================   REGISTRATION   =========================");
+          " __________________________________________________________________");
+      print(
+          "|                                                                  |");
+      print(
+          "|                          REGISTRATION                            |");
+      print(
+          "|__________________________________________________________________|");
       registration();
     } else if (choice == "S" || choice == "s") {
       print(
-          "============================   SIGN IN   =============================");
+          " __________________________________________________________________");
+      print(
+          "|                                                                  |");
+      print(
+          "|                             LOGIN                                |");
+      print(
+          "|__________________________________________________________________|");
       login();
     } //sign in
     else if (choice == "E" || choice == "e") {

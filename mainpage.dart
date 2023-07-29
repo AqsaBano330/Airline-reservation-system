@@ -28,18 +28,22 @@ List flights = [
   }
 ];
 mainpage() {
-  print("");
-  print("Hi ${currentUser["firstName"]},");
-  print("Unlock Your Dreams, Soar to New Heights - Book Your Flight Today!");
-  print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-  print("Account details(D)");
-  print("Book Flight(B)");
-  print("Your Booking(Y)");
-  print("Flight Schedule(F)");
-  print("logout(L)");
-  print("");
-
-  stdout.write("Please enter your choice: ");
+  print(" __________________________________________________________________");
+  print("|                                                                  |");
+  print("|                    WELCOME TO AK AIRLINES                        |");
+  print("|__________________________________________________________________|");
+  print(
+      "| Hi ${currentUser["firstName"]},                                                      |");
+  print("| Book Your Flight Today!                                          |");
+  print("|                                                                  |");
+  print("|                             DASHBOARD                            |");
+  print("|                            ===========                (L) Logout |");
+  print("|                                                                  |");
+  print("| [D] Account details                       [B] Book Flight        |");
+  print("| [Y] Your Booking                          [F] Flight Schedule    |");
+  print("|                                                                  |");
+  print("| Please Enter your choice:                                        |");
+  print("|__________________________________________________________________|");
 
   bool isbolo = false;
   while (isbolo == false) {

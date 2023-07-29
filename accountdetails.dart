@@ -4,26 +4,25 @@ import 'dart:io';
 import 'mainpage.dart';
 
 accountDetails() {
-  print("====================    Your Account Details    ===============");
-  print("                                                            Edit(E)");
-  stdout.write("First Name:");
-  print(currentUser["firstName"]);
-  stdout.write("Last Name:");
-  print(currentUser["lastName"]);
-  stdout.write("Contact Number:");
-  print(currentUser["phoneNo"]);
-  stdout.write("NIC Number:");
-  print(currentUser['nicNo']);
-  stdout.write("Passport Number:");
-  print(currentUser["passportNumber"]);
-  stdout.write("Email Account:");
-  print(currentUser["email"]);
-  stdout.write("Password:");
-  print(currentUser["password"]);
+  print(" __________________________________________________________________");
+  print("|                                                                  |");
+  print("|                         ACCOUNT DETAILS                          |");
+  print("|__________________________________________________________________|");
+  print("|                                                                  |");
+  print("|                                                      [E] Edit    |");
+  print("|    First Name: ${currentUser["firstName"]}                        ");
+  print("|    Last Name:  ${currentUser["lastName"]}                         ");
+  print("|    Contact Number: ${currentUser["phoneNo"]}                      ");
+  print("|    NIC Number: ${currentUser['nicNo']}                            ");
+  print("|    Passport Number: ${currentUser["passportNumber"]}              ");
+  print("|    Email Account: ${currentUser["email"]}                         ");
+  print("|    Password: ${currentUser["password"]}                           ");
+  print("|                                                                  |");
+  print("|                                               [b] <- Back        |");
+  print("|                                               [D] Delete Account |");
+  print("|  Please Enter your choice                                        |");
+  print("|__________________________________________________________________|");
 
-  print(" Plese enter");
-  print("                                      <- Back (B)");
-  print("                                Delete Account(D)");
   var kiahua = stdin.readLineSync();
   if (kiahua == "b" || kiahua == "B") {
     mainpage();
@@ -31,8 +30,7 @@ accountDetails() {
     edit_acc_details();
   } else if (kiahua == "d" || kiahua == "D") {
     users.remove(currentUser);
-    print("Account deleted");
-    print(users);
+    print("!!! Account deleted !!!");
     home();
   }
 }
