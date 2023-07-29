@@ -1,6 +1,5 @@
 import 'accountdetails.dart';
 import 'dart:io';
-
 import 'home.dart';
 
 void edit_acc_details() {

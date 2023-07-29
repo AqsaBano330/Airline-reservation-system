@@ -1,7 +1,6 @@
 import 'edit_acc_details.dart';
 import 'home.dart';
 import 'dart:io';
-
 import 'mainpage.dart';
 
 accountDetails() {

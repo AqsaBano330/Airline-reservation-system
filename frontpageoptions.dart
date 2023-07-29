@@ -1,5 +1,3 @@
-import 'home.dart';
-
 frontoptions() {
   print("Do you want to register? (R)");
   print("Already have account?(S)");

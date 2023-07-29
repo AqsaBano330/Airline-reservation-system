@@ -1,12 +1,10 @@
 import 'dart:io';
 import 'dart:math';
-
+import 'mainpage.dart';
 import 'home.dart';
 import 'payment.dart';
-import 'bookingdetails.dart';
-import 'mainpage.dart';
 
-flightbooking(List flights) {
+flightbooking() {
   var random = Random();
   print("");
 
@@ -50,7 +48,6 @@ flightbooking(List flights) {
       currentUser.addAll(flights[b]);
       int Booking_id = random.nextInt(100) + 1;
       currentUser["Bookingid"] = Booking_id;
-
       print("Press P for payment");
       var paymentoutput = stdin.readLineSync();
       if (paymentoutput == "p" || paymentoutput == "P") {
@@ -76,7 +73,7 @@ flightbooking(List flights) {
     var jao = stdin.readLineSync();
 
     if (jao == "b" || jao == "B") {
-      flightbooking(flights);
+      flightbooking();
     }
   }
 

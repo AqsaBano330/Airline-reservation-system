@@ -36,9 +36,10 @@ adminViewAllUserDetails() {
   for (var n = 0; n < users.length; n++) {
     print("${users[n]["firstName"]} ${users[n]["lastName"]}");
     print(users[n]);
-    print("Delete($n)");
+    print("                                                    Delete($n)");
   }
-  print("Back(8)");
+  print(
+      "                                                               Back(8)");
 
   bool isadmindeleteuser = false;
   while (isadmindeleteuser == false) {

@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'home.dart';
 import 'mainpage.dart';
-import 'bookingdetails.dart';
-import 'flightbooking.dart';
 
 endingnote() {
   print("*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *");

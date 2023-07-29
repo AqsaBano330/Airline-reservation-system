@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'mainpage.dart';
 
-flightschedule(List flights) {
+flightschedule() {
   print("===================== Flights Schedules================");
 
   bool isflightnumber = false;
