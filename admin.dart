@@ -57,7 +57,10 @@ import 'mainpage.dart';
 import 'viewAllBookings.dart';
 
 admin() {
-  print("=======================Admin Panel=======================");
+  print(" __________________________________________________________________");
+  print("|                                                                  |");
+  print("|                         ADMIN FLIGHT                             |");
+  print("|__________________________________________________________________|");
 
   print("[1] Check users Details");
   print("[2] view all flights");
@@ -74,5 +77,7 @@ admin() {
     viewAllBookings();
   } else if (adminchoice == "4") {
     mainpage();
+  } else {
+    print("invalid choice");
   }
 }

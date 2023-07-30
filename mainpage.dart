@@ -8,29 +8,29 @@ import 'home.dart';
 List flights = [
   {
     "source": "Karachi",
-    "destination": "Pakistan",
-    "ddate": 1,
-    "rdate": 1,
+    "destination": "Lahore",
+    "ddate": "1/8/23",
+    "rdate": "1/9/23",
     "price": "123000",
     "seat": "middle row",
     "cabinclass": "Economy",
-    "flightnumber": 605433
+    "flightnumber": "605433"
   },
   {
     "source": "Karachi",
-    "destination": "Pakistan",
-    "ddate": 1,
-    "rdate": 1,
-    "price": 1,
-    "seat": "a",
-    "cabinclass": "a",
-    "flightnumber": 676676
+    "destination": "Lahore",
+    "ddate": "2/8/23",
+    "rdate": "2/9/23",
+    "price": "2590000",
+    "seat": "window",
+    "cabinclass": "Business",
+    "flightnumber": "676676"
   }
 ];
 mainpage() {
   print(" __________________________________________________________________");
   print("|                                                                  |");
-  print("|                    WELCOME TO AK AIRLINES                        |");
+  print("|                               AK AIRLINES                        |");
   print("|__________________________________________________________________|");
   print(
       "| Hi ${currentUser["firstName"]},                                                      |");

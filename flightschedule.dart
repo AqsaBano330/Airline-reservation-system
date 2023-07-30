@@ -3,25 +3,30 @@ import 'dart:io';
 import 'mainpage.dart';
 
 flightschedule() {
-  print("===================== Flights Schedules================");
+  print(" __________________________________________________________________");
+  print("|                                                                  |");
+  print("|                            FLIGHT SCHEDULE                       |");
+  print("|__________________________________________________________________|");
 
   bool isflightnumber = false;
   while (isflightnumber == false) {
-    print("                                                Back(8)");
+    print("                                                [8] Back");
     print("Please Enter Flight number");
-    int flightnumber = int.parse(stdin.readLineSync()!);
+    String flightnumber = (stdin.readLineSync()!);
 
     for (var u = 0; u <= flights.length - 1; u++) {
       if (flightnumber == flights[u]["flightnumber"]) {
-        print(flights[u]["flightnumber"]);
-        print(flights[u]["source"]);
-        print(flights[u]["destination"]);
-        print(flights[u]["ddate"]);
-        print(flights[u]["rdate"]);
-        print(flights[u]["price"]);
+        print("Flight Number: ${flights[u]["flightnumber"]}");
+        print("Source: ${flights[u]["source"]}");
+        print("Destination: ${flights[u]["destination"]}");
+        print("Depature Date: ${flights[u]["ddate"]}");
+        print("Return Date: ${flights[u]["rdate"]}");
+        print("Price: ${flights[u]["price"]}");
       } else if (flightnumber == 8) {
         isflightnumber = true;
         mainpage();
+      } else {
+        print("no matched flight");
       }
     }
   }

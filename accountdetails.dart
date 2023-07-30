@@ -23,14 +23,22 @@ accountDetails() {
   print("|  Please Enter your choice                                        |");
   print("|__________________________________________________________________|");
 
-  var kiahua = stdin.readLineSync();
-  if (kiahua == "b" || kiahua == "B") {
-    mainpage();
-  } else if (kiahua == "e" || kiahua == "E") {
-    edit_acc_details();
-  } else if (kiahua == "d" || kiahua == "D") {
-    users.remove(currentUser);
-    print("!!! Account deleted !!!");
-    home();
+  bool iskiahua = false;
+  while (iskiahua == false) {
+    var kiahua = stdin.readLineSync();
+    if (kiahua == "b" || kiahua == "B") {
+      mainpage();
+      iskiahua = true;
+    } else if (kiahua == "e" || kiahua == "E") {
+      edit_acc_details();
+      iskiahua = true;
+    } else if (kiahua == "d" || kiahua == "D") {
+      users.remove(currentUser);
+      print("!!! Account deleted !!!");
+      iskiahua = true;
+      home();
+    } else {
+      print('Invalid Choice');
+    }
   }
 }

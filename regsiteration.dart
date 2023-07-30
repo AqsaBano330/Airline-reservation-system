@@ -3,63 +3,123 @@ import 'dart:io';
 
 registration() {
   Map user = {};
-  stdout.write("| First Name:");
-  var Fname = stdin.readLineSync()!;
 
-  stdout.write("| Last Name: ");
-  var Lname = stdin.readLineSync()!;
+  //First Name
 
-  stdout.write("| phone no ");
-  var phone_no = int.parse(stdin.readLineSync()!); //"phoneNo": phone_no,
+  bool fname = false;
 
-  stdout.write("| nic no ");
-  var NIC_no = int.parse(stdin.readLineSync()!);
-
-  stdout.write("| passport number ");
-  var passport_number = int.parse(stdin.readLineSync()!);
-
-  stdout.write("| email ");
-
-  var email = (stdin.readLineSync()!);
-  if (users.any((e) => e["email"] == email)) {
-    print('email already exists. Please choose another email.');
-    print("registeration failed!!!");
-    registration();
-  }
-
-  stdout.write("| password ");
-  var password = (stdin.readLineSync()!);
-
-  bool isconfirm = true;
-  while (isconfirm == true) {
-    stdout.write("| confirm password ");
-    var confirm_password = (stdin.readLineSync()!);
-    if (confirm_password == password) {
-      print("| !!!password confirmed!!!");
-      print(
-          "|________________________________________________________________");
-      user["password"] = password;
-      isconfirm = false;
+  while (fname == false) {
+    stdout.write("| First Name:");
+    String Fname = stdin.readLineSync()!;
+    if (Fname == "") {
+      print("It can't be empty");
     } else {
-      print("!!!password is not same!!!");
+      user["firstName"] = Fname;
+      fname = true;
     }
   }
 
-  user["firstName"] = Fname;
-  user["lastName"] = Lname;
-  user["phoneNo"] = phone_no;
-  user["nicNo"] = NIC_no;
-  user["passportNumber"] = passport_number;
-  user["email"] = email;
-  user["password"] = password;
+//Last Name
+  bool lname = false;
+  while (lname == false) {
+    stdout.write("| Last Name: ");
+    var Lname = stdin.readLineSync()!;
+    if (Lname == "") {
+      print("It cant be empty");
+    } else {
+      user["lastName"] = Lname;
+      lname = true;
+    }
+  }
 
-  users.add(user);
+//Phone No
+  bool phoneno = false;
+  while (phoneno == false) {
+    stdout.write("| Phone no: ");
+    String phone_no = stdin.readLineSync()!;
 
-  print("            ____________________________________");
-  print("           |  Your Account has been registered  |");
-  print("           |____________________________________|");
+    if (phone_no == "") {
+      print("It can't be empty");
+    } else {
+      user["phoneNo"] = phone_no;
+      phoneno = true;
+    }
+  }
 
-  print("");
+  bool nicno = false;
+  while (nicno == false) {
+    stdout.write("| NIC no: ");
+    String NIC_no = (stdin.readLineSync()!);
+    if (NIC_no == "") {
+      print("It can't be empty");
+    } else {
+      user["nicNo"] = NIC_no;
+      nicno = true;
+    }
+  }
 
-  home();
+  bool passportnum = false;
+  while (passportnum == false) {
+    stdout.write("| Passport Number: ");
+    String passport_number = (stdin.readLineSync()!);
+    if (passport_number == "") {
+      print("It can't be empty");
+    } else {
+      user["passportNumber"] = passport_number;
+      passportnum = true;
+    }
+  }
+
+  bool isemail = false;
+  while (isemail == false) {
+    stdout.write("| Email: ");
+    String email = (stdin.readLineSync()!);
+    if (users.any((e) => e["email"] == email)) {
+      print('email already exists. Please choose another email.');
+      print("registeration failed!!!");
+      registration();
+    } else if (email == "") {
+      print("It can't be empty");
+    } else {
+      user["email"] = email;
+      isemail = true;
+    }
+  }
+
+  bool ispassword = false;
+  while (ispassword == false) {
+    stdout.write("| Password: ");
+    String password = (stdin.readLineSync()!); //user["password"] = password;
+    if (password == "") {
+      print("It can't be empty");
+    } else {
+      user["password"] = password;
+      ispassword = true;
+    }
+
+    bool ispassconfirm = true;
+    while (ispassconfirm == true) {
+      stdout.write("| Confirm Password: ");
+      String confirm_password = (stdin.readLineSync()!);
+      if (confirm_password == password) {
+        print("| !!!password confirmed!!!");
+        print(
+            "|__________________________________________________________________");
+        user["password"] = password;
+        ispassconfirm = false;
+      } else {
+        print("!!!password is not same!!!");
+      }
+    }
+
+    users.add(user);
+
+    print("            ____________________________________");
+    print("           |  Your Account has been registered  |");
+    print("           |____________________________________|");
+
+    print("");
+
+    home();
+  }
 }

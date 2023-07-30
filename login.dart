@@ -51,7 +51,7 @@ login() {
     stdout.write("| Enter Password: ");
     var password = stdin.readLineSync()!;
     print(
-        "|_________________________________________________________________|");
+        "|__________________________________________________________________|");
 
     if (email == "admin@gmail.com" && password == "123") {
       admin();
