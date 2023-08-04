@@ -3,7 +3,7 @@ import 'dart:io';
 import 'home.dart';
 
 void edit_acc_details() {
-  print("====================   Edit Your Account Details    ===============");
+  print("                        ACCOUNT DETAILS                          ");
 
   stdout.write("[1] First Name:");
   print(currentUser["firstName"]);
@@ -20,7 +20,7 @@ void edit_acc_details() {
   stdout.write("[7] Password:");
   print(currentUser["password"]);
 
-  print("                                                         <-back(8)");
+  print("                                                         [8] <-back");
   print("");
 
   bool isedit = false;

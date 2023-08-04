@@ -99,24 +99,21 @@ registration() {
 
     bool ispassconfirm = true;
     while (ispassconfirm == true) {
-      stdout.write("| Confirm Password: ");
+      stdout.write(" Confirm Password: ");
       String confirm_password = (stdin.readLineSync()!);
       if (confirm_password == password) {
-        print("| !!!password confirmed!!!");
-        print(
-            "|__________________________________________________________________");
+        print(" password confirmed");
+
         user["password"] = password;
         ispassconfirm = false;
       } else {
-        print("!!!password is not same!!!");
+        print("password is not same");
       }
     }
 
     users.add(user);
 
-    print("            ____________________________________");
-    print("           |  Your Account has been registered  |");
-    print("           |____________________________________|");
+    print("            Your Account has been registered  ");
 
     print("");
 

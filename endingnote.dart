@@ -4,19 +4,11 @@ import 'home.dart';
 import 'mainpage.dart';
 
 endingnote() {
-  print("*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *");
-  print("*                                                                 *");
-  print("*                                                                 *");
   print("*           CONGRATULATION YOUR FLIGHT HAS BEEN BOOKED!!!         *");
   print("*                        EXPLORE THE WORLD!!!                     *");
   print("*                                                                 *");
-  print("*                                                                 *");
-  print("*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *");
 
-  print(" __________________________________________________________________");
-  print("|                                                                  |");
-  print("|                              FLIGHT INFO                         |");
-  print("|__________________________________________________________________|");
+  print("                           FLIGHT INFO                         ");
 
   stdout.write("|    Booking ID: ");
   print(currentUser['Bookingid']);
@@ -34,8 +26,7 @@ endingnote() {
   print(currentUser["seat"]);
   stdout.write("|    Cabin Class: ");
   print(currentUser["cabinclass"]);
-  print("|                                                       [B] <-Back |");
-  print("|__________________________________________________________________|");
+  print("|                                                       B <-Back |");
 
   var endingnoteinput = stdin.readLineSync();
   bool isendingnote = false;

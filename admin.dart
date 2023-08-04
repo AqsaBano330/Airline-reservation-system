@@ -57,15 +57,12 @@ import 'mainpage.dart';
 import 'viewAllBookings.dart';
 
 admin() {
-  print(" __________________________________________________________________");
-  print("|                                                                  |");
-  print("|                         ADMIN FLIGHT                             |");
-  print("|__________________________________________________________________|");
+  print("                       ADMIN FLIGHT                             ");
 
-  print("[1] Check users Details");
-  print("[2] view all flights");
-  print("[3] View Bookings");
-  print("[4] Logout");
+  print("1 Check users Details");
+  print("2 view all flights");
+  print("3 View Bookings");
+  print("4 Logout");
 
   print("Where you want to go?");
   String adminchoice = stdin.readLineSync()!;

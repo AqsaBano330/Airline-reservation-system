@@ -50,8 +50,6 @@ login() {
     String email = stdin.readLineSync()!;
     stdout.write("| Enter Password: ");
     var password = stdin.readLineSync()!;
-    print(
-        "|__________________________________________________________________|");
 
     if (email == "admin@gmail.com" && password == "123") {
       admin();
@@ -63,10 +61,8 @@ login() {
         isloggedin = true;
         currentUser = users[i];
         mainpage();
-        print("            ____________________________________");
+
         print("           |  Your are Successfullu Loggedin    |");
-        print("           |____________________________________|");
-        break;
       }
     }
 

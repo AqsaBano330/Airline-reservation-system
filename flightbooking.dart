@@ -9,12 +9,7 @@ flightbooking() {
   var random = Random();
   print("");
 
-  print(" __________________________________________________________________");
-  print("|                                                                  |");
   print("|                         BOOK YOUR FLIGHT                         |");
-  print("|__________________________________________________________________|");
-  print("|                                                                  |");
-  print("|                                                                  |");
 
   //Source
 
@@ -96,11 +91,6 @@ flightbooking() {
     }
   }
 
-  print("|                                                                  |");
-  print("|                                                                  |");
-  print("|                                                                  |");
-  print("|__________________________________________________________________|");
-
   bool isflight = false;
 
   for (var b = 0; b <= flights.length - 1; b++) {
@@ -112,8 +102,7 @@ flightbooking() {
         inputflight["cabinclass"] == flights[b]["cabinclass"]) {
       print("Here is your desired flight sir...");
       currentUser.addAll(flights[b]);
-      print(' ________________________________');
-      print("|________________________________|");
+
       print("| Flight No.    | ${flights[b]["flightnumber"]}  ");
       print("| Source        | ${flights[b]["source"]}  ");
       print("| Destination   | ${flights[b]["destination"]}   ");
@@ -122,7 +111,7 @@ flightbooking() {
       print("| Price         | ${flights[b]["price"]}  ");
       print("| Seat          | ${flights[b]["seat"]}  ");
       print("| Cabin Class   | ${flights[b]["cabinclass"]}   ");
-      print("|_______________|_________________");
+
       isflight = true;
       currentUser.addAll(flights[b]);
       int Booking_id = random.nextInt(100) + 1;
@@ -158,8 +147,6 @@ flightbooking() {
         print("| Price         | ${flights[b]["seat"]}  ");
         print("| Seat          | ${flights[b]["cabinclass"]}  ");
         print("| Cabin Class   | ${flights[b]["flightnumber"]}   ");
-        print("|_______________|_________________");
-        print("");
       }
     }
     print(

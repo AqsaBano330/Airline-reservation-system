@@ -3,10 +3,7 @@ import 'dart:io';
 import 'mainpage.dart';
 
 flightschedule() {
-  print(" __________________________________________________________________");
-  print("|                                                                  |");
   print("|                            FLIGHT SCHEDULE                       |");
-  print("|__________________________________________________________________|");
 
   bool isflightnumber = false;
   while (isflightnumber == false) {
@@ -22,7 +19,7 @@ flightschedule() {
         print("Depature Date: ${flights[u]["ddate"]}");
         print("Return Date: ${flights[u]["rdate"]}");
         print("Price: ${flights[u]["price"]}");
-      } else if (flightnumber == 8) {
+      } else if (flightnumber == "8") {
         isflightnumber = true;
         mainpage();
       } else {

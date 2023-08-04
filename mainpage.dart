@@ -28,22 +28,19 @@ List flights = [
   }
 ];
 mainpage() {
-  print(" __________________________________________________________________");
-  print("|                                                                  |");
-  print("|                               AK AIRLINES                        |");
-  print("|__________________________________________________________________|");
+  print("                               AK AIRLINES                        ");
+
   print(
-      "| Hi ${currentUser["firstName"]},                                                      |");
-  print("| Book Your Flight Today!                                          |");
-  print("|                                                                  |");
-  print("|                             DASHBOARD                            |");
-  print("|                            ===========                (L) Logout |");
-  print("|                                                                  |");
-  print("| [D] Account details                       [B] Book Flight        |");
-  print("| [Y] Your Booking                          [F] Flight Schedule    |");
-  print("|                                                                  |");
-  print("| Please Enter your choice:                                        |");
-  print("|__________________________________________________________________|");
+      "Hi ${currentUser["firstName"]},                                                      ");
+  print(" Book Your Flight Today!                                          ");
+  print("                                                                  ");
+  print("                             DASHBOARD                            ");
+  print("                                            L Logout ");
+  print("                                                                  ");
+  print(" D Account details                       B Book Flight        ");
+  print(" Y Your Booking                          F Flight Schedule    ");
+  print("                                                                  ");
+  print(" Please Enter your choice:                                        ");
 
   bool isbolo = false;
   while (isbolo == false) {

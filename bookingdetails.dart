@@ -3,12 +3,12 @@ import 'home.dart';
 import 'mainpage.dart';
 
 bookingdetails() {
-  print("====================  Your Booking Details  ========================");
+  print("|                         BOOKING DETAIL                           |");
 
   bool isbookingid = false;
 
   while (isbookingid == false) {
-    print("please enter booking id                                  <-Back(8)");
+    print("please enter booking id                                [8] <-Back");
     var bookingid123 = int.parse(stdin.readLineSync()!);
     for (var n = 0; n <= users.length - 1; n++) {
       if (bookingid123 == currentUser["Bookingid"]) {
@@ -18,7 +18,7 @@ bookingdetails() {
         print(currentUser['source']);
         stdout.write("| Destination: ");
         print(
-            "${currentUser['destination']}                       Cancel Booking(0)");
+            "${currentUser['destination']}                  [0] Cancel Booking");
         stdout.write("| Departure Date: ");
         print(currentUser["ddate"]);
         stdout.write("| Return Date: ");
@@ -45,11 +45,11 @@ bookingdetails() {
             users[g].remove("cabinclass");
             users[g].remove("flightNumber");
 
-            print("Booking canceled");
+            print("!!!!Booking canceled!!!");
           }
         }
       } else {
-        print("There is no Booking");
+        print("There is no Booking Matched");
       }
     }
   }
